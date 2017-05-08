@@ -51,10 +51,10 @@
 
 -ifdef(TEST).
 -include_lib("eunit/include/eunit.hrl").
--export([rfc2047_utf8_encode/1]).
+%%-export([rfc2047_utf8_encode/1]).
 -endif.
 
--export([encode/1, encode/2, decode/2, decode/1, get_header_value/2, get_header_value/3, parse_headers/1]).
+-export([encode/1, encode/2, decode/2, decode/1, get_header_value/2, get_header_value/3, parse_headers/1, rfc2047_utf8_encode/1]).
 
 -define(DEFAULT_MIME_VERSION, <<"1.0">>).
 
