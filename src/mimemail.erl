@@ -767,6 +767,7 @@ encode_header_value(H, Value) when H =:= <<"To">>; H =:= <<"Cc">>; H =:= <<"Bcc"
 	NewNames = lists:map(fun rfc2047_utf8_encode/1, Names),
 	smtp_util:combine_rfc822_addresses(lists:zip(NewNames, Emails));
 
+encode_header_value(K, Value) when K=:=<<"Content-Disposition">> -> Value;
 encode_header_value(_, Value) ->
 	rfc2047_utf8_encode(Value).
 
